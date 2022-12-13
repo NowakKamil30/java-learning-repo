@@ -1,4 +1,4 @@
-package guru.springframework.sfgrestbrewery.bootstrap;
+package guru.springframework.sfgrestbrewery.services.bootstrap;
 
 import guru.springframework.sfgrestbrewery.domain.Beer;
 import guru.springframework.sfgrestbrewery.repositories.BeerRepository;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.time.LocalDateTime;
 import java.util.Random;
 
 /**
@@ -60,9 +61,9 @@ public class BeerLoader implements CommandLineRunner {
     }
 
     private synchronized void loadBeerObjects() {
-        log.debug("Loading initial data. Count is: {}", beerRepository.count() );
+        log.debug("Loading initial data. Count is: {}", beerRepository.count().block() );
 
-        if (beerRepository.count() == 0) {
+        if (beerRepository.count().block() == 0) {
 
             Random random = new Random();
 
@@ -70,225 +71,281 @@ public class BeerLoader implements CommandLineRunner {
                     .beerName("Mango Bobs")
                     .beerStyle(BeerStyleEnum.ALE)
                     .upc(BEER_1_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Galaxy Cat")
                     .beerStyle(BeerStyleEnum.PALE_ALE)
                     .upc(BEER_2_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("No Hammers On The Bar")
                     .beerStyle(BeerStyleEnum.WHEAT)
                     .upc(BEER_3_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Blessed")
                     .beerStyle(BeerStyleEnum.STOUT)
                     .upc(BEER_4_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Adjunct Trail")
                     .beerStyle(BeerStyleEnum.STOUT)
                     .upc(BEER_5_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Very GGGreenn")
                     .beerStyle(BeerStyleEnum.IPA)
                     .upc(BEER_6_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Double Barrel Hunahpu's")
                     .beerStyle(BeerStyleEnum.STOUT)
                     .upc(BEER_7_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Very Hazy")
                     .beerStyle(BeerStyleEnum.IPA)
                     .upc(BEER_8_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("SR-71")
                     .beerStyle(BeerStyleEnum.STOUT)
                     .upc(BEER_9_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Pliny the Younger")
                     .beerStyle(BeerStyleEnum.IPA)
                     .upc(BEER_10_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Blessed")
                     .beerStyle(BeerStyleEnum.STOUT)
                     .upc(BEER_11_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("King Krush")
                     .beerStyle(BeerStyleEnum.IPA)
                     .upc(BEER_12_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("PBS Porter")
                     .beerStyle(BeerStyleEnum.PORTER)
                     .upc(BEER_13_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Pinball Porter")
                     .beerStyle(BeerStyleEnum.STOUT)
                     .upc(BEER_14_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Golden Budda")
                     .beerStyle(BeerStyleEnum.STOUT)
                     .upc(BEER_15_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Grand Central Red")
                     .beerStyle(BeerStyleEnum.LAGER)
                     .upc(BEER_16_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Pac-Man")
                     .beerStyle(BeerStyleEnum.STOUT)
                     .upc(BEER_17_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Ro Sham Bo")
                     .beerStyle(BeerStyleEnum.IPA)
                     .upc(BEER_18_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Summer Wheatly")
                     .beerStyle(BeerStyleEnum.WHEAT)
                     .upc(BEER_19_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Java Jill")
                     .beerStyle(BeerStyleEnum.LAGER)
                     .upc(BEER_20_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Bike Trail Pale")
                     .beerStyle(BeerStyleEnum.PALE_ALE)
                     .upc(BEER_21_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("N.Z.P")
                     .beerStyle(BeerStyleEnum.IPA)
                     .upc(BEER_22_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Stawberry Blond")
                     .beerStyle(BeerStyleEnum.WHEAT)
                     .upc(BEER_23_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Loco")
                     .beerStyle(BeerStyleEnum.PORTER)
                     .upc(BEER_24_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Spocktoberfest")
                     .beerStyle(BeerStyleEnum.STOUT)
                     .upc(BEER_25_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Beach Blond Ale")
                     .beerStyle(BeerStyleEnum.ALE)
                     .upc(BEER_26_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Bimini Twist IPA")
                     .beerStyle(BeerStyleEnum.IPA)
                     .upc(BEER_27_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Rod Bender Red Ale")
                     .beerStyle(BeerStyleEnum.ALE)
                     .upc(BEER_28_UPC)
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("Floating Dock")
@@ -296,7 +353,9 @@ public class BeerLoader implements CommandLineRunner {
                     .upc(BEER_29_UPC)
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
+                    .build()).block();
 
             beerRepository.save(Beer.builder()
                     .beerName("El Hefe")
@@ -304,9 +363,11 @@ public class BeerLoader implements CommandLineRunner {
                     .upc(BEER_30_UPC)
                     .price(new BigDecimal(BigInteger.valueOf(random.nextInt(10000)), 2))
                     .quantityOnHand(random.nextInt(5000))
-                    .build());
+                    .createdDate(LocalDateTime.now())
+                    .lastModifiedDate(LocalDateTime.now())
+                    .build()).block();
 
-            log.debug("Beer Records loaded: {}", beerRepository.count());
+            log.debug("Beer Records loaded: {}", beerRepository.count().block());
         }
     }
 }
