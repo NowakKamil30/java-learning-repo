@@ -16,7 +16,7 @@ import java.util.Set;
 @SuperBuilder
 @NoArgsConstructor
 @ToString
-public class Customer extends BaseEntity{
+public class Customer extends BaseEntity {
     @Column(length = 50)
     private String customerName;
     @Embedded
@@ -25,7 +25,11 @@ public class Customer extends BaseEntity{
     private String phone;
     private String email;
     @OneToMany(mappedBy = "customer")
+    @ToString.Exclude
     private Set<OrderHeader> orderHeaders;
+
+    @Version
+    private Integer version;
 
     @Override
     public boolean equals(Object o) {

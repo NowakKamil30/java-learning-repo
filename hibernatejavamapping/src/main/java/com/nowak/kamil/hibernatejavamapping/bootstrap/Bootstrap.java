@@ -1,15 +1,12 @@
 package com.nowak.kamil.hibernatejavamapping.bootstrap;
 
-import com.nowak.kamil.hibernatejavamapping.HibernatejavamappingApplication;
 import com.nowak.kamil.hibernatejavamapping.domain.Category;
 import com.nowak.kamil.hibernatejavamapping.domain.OrderLine;
 import com.nowak.kamil.hibernatejavamapping.domain.Product;
 import com.nowak.kamil.hibernatejavamapping.repository.OrderHeaderRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
