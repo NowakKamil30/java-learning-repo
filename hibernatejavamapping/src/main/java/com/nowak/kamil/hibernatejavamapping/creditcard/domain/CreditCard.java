@@ -1,5 +1,6 @@
-package com.nowak.kamil.hibernatejavamapping.domain;
+package com.nowak.kamil.hibernatejavamapping.creditcard.domain;
 
+import com.nowak.kamil.hibernatejavamapping.common.domain.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Version;
 import lombok.Getter;

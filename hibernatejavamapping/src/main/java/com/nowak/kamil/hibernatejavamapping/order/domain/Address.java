@@ -1,4 +1,4 @@
-package com.nowak.kamil.hibernatejavamapping.domain;
+package com.nowak.kamil.hibernatejavamapping.order.domain;
 
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.Size;

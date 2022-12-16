@@ -1,16 +1,14 @@
 package com.nowak.kamil.hibernatejavamapping;
 
-import com.nowak.kamil.hibernatejavamapping.domain.*;
-import com.nowak.kamil.hibernatejavamapping.repository.CustomerRepository;
-import com.nowak.kamil.hibernatejavamapping.repository.OrderHeaderRepository;
-import com.nowak.kamil.hibernatejavamapping.repository.ProductRepository;
+import com.nowak.kamil.hibernatejavamapping.order.domain.*;
+import com.nowak.kamil.hibernatejavamapping.order.repository.CustomerRepository;
+import com.nowak.kamil.hibernatejavamapping.order.repository.OrderHeaderRepository;
+import com.nowak.kamil.hibernatejavamapping.order.repository.ProductRepository;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.util.*;

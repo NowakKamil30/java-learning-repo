@@ -1,7 +1,7 @@
-package com.nowak.kamil.hibernatejavamapping.service;
+package com.nowak.kamil.hibernatejavamapping.order.service;
 
-import com.nowak.kamil.hibernatejavamapping.domain.Product;
-import com.nowak.kamil.hibernatejavamapping.repository.ProductRepository;
+import com.nowak.kamil.hibernatejavamapping.order.domain.Product;
+import com.nowak.kamil.hibernatejavamapping.order.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,5 +1,7 @@
 package com.nowak.kamil.hibernatejavamapping.domain;
 
+import com.nowak.kamil.hibernatejavamapping.order.domain.Customer;
+import com.nowak.kamil.hibernatejavamapping.order.domain.OrderHeader;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

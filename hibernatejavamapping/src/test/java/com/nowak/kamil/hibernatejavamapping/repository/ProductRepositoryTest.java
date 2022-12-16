@@ -1,8 +1,9 @@
 package com.nowak.kamil.hibernatejavamapping.repository;
 
-import com.nowak.kamil.hibernatejavamapping.domain.Product;
-import com.nowak.kamil.hibernatejavamapping.domain.ProductStatus;
-import com.nowak.kamil.hibernatejavamapping.service.ProductService;
+import com.nowak.kamil.hibernatejavamapping.order.domain.Product;
+import com.nowak.kamil.hibernatejavamapping.order.domain.ProductStatus;
+import com.nowak.kamil.hibernatejavamapping.order.repository.ProductRepository;
+import com.nowak.kamil.hibernatejavamapping.order.service.ProductService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

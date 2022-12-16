@@ -1,7 +1,7 @@
 package com.nowak.kamil.hibernatejavamapping.bootstrap;
 
-import com.nowak.kamil.hibernatejavamapping.domain.Customer;
-import com.nowak.kamil.hibernatejavamapping.repository.CustomerRepository;
+import com.nowak.kamil.hibernatejavamapping.order.domain.Customer;
+import com.nowak.kamil.hibernatejavamapping.order.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;

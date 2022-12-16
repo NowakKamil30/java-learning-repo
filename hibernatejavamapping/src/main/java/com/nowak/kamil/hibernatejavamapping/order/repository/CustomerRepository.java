@@ -1,6 +1,6 @@
-package com.nowak.kamil.hibernatejavamapping.repository;
+package com.nowak.kamil.hibernatejavamapping.order.repository;
 
-import com.nowak.kamil.hibernatejavamapping.domain.Customer;
+import com.nowak.kamil.hibernatejavamapping.order.domain.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

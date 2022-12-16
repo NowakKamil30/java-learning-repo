@@ -1,6 +1,6 @@
-package com.nowak.kamil.hibernatejavamapping.service;
+package com.nowak.kamil.hibernatejavamapping.order.service;
 
-import com.nowak.kamil.hibernatejavamapping.domain.Product;
+import com.nowak.kamil.hibernatejavamapping.order.domain.Product;
 
 public interface ProductService {
 

@@ -1,4 +1,4 @@
-package com.nowak.kamil.hibernatejavamapping.domain;
+package com.nowak.kamil.hibernatejavamapping.order.domain;
 
 public enum ProductStatus {
     NEW, IN_STOCK, DISCONTINUED

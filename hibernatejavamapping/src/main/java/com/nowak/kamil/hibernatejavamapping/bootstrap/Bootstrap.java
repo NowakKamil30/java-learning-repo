@@ -1,9 +1,9 @@
 package com.nowak.kamil.hibernatejavamapping.bootstrap;
 
-import com.nowak.kamil.hibernatejavamapping.domain.Category;
-import com.nowak.kamil.hibernatejavamapping.domain.OrderLine;
-import com.nowak.kamil.hibernatejavamapping.domain.Product;
-import com.nowak.kamil.hibernatejavamapping.repository.OrderHeaderRepository;
+import com.nowak.kamil.hibernatejavamapping.order.domain.Category;
+import com.nowak.kamil.hibernatejavamapping.order.domain.OrderLine;
+import com.nowak.kamil.hibernatejavamapping.order.domain.Product;
+import com.nowak.kamil.hibernatejavamapping.order.repository.OrderHeaderRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;

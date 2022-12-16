@@ -1,5 +1,6 @@
-package com.nowak.kamil.hibernatejavamapping.domain;
+package com.nowak.kamil.hibernatejavamapping.order.domain;
 
+import com.nowak.kamil.hibernatejavamapping.common.domain.BaseEntity;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;

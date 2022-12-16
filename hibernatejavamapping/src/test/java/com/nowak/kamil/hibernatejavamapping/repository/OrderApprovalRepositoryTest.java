@@ -1,6 +1,7 @@
 package com.nowak.kamil.hibernatejavamapping.repository;
 
-import com.nowak.kamil.hibernatejavamapping.domain.OrderApproval;
+import com.nowak.kamil.hibernatejavamapping.order.domain.OrderApproval;
+import com.nowak.kamil.hibernatejavamapping.order.repository.OrderApprovalRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

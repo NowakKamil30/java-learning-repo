@@ -1,6 +1,6 @@
-package com.nowak.kamil.hibernatejavamapping.repository;
+package com.nowak.kamil.hibernatejavamapping.order.repository;
 
-import com.nowak.kamil.hibernatejavamapping.domain.Product;
+import com.nowak.kamil.hibernatejavamapping.order.domain.Product;
 import jakarta.persistence.LockModeType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Lock;

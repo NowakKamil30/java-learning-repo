@@ -1,8 +1,8 @@
 package com.nowak.kamil.hibernatejavamapping.bootstrap;
 
-import com.nowak.kamil.hibernatejavamapping.domain.Product;
-import com.nowak.kamil.hibernatejavamapping.domain.ProductStatus;
-import com.nowak.kamil.hibernatejavamapping.service.ProductService;
+import com.nowak.kamil.hibernatejavamapping.order.domain.Product;
+import com.nowak.kamil.hibernatejavamapping.order.domain.ProductStatus;
+import com.nowak.kamil.hibernatejavamapping.order.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

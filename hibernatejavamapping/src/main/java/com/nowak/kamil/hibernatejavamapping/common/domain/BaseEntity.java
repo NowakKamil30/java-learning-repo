@@ -1,4 +1,4 @@
-package com.nowak.kamil.hibernatejavamapping.domain;
+package com.nowak.kamil.hibernatejavamapping.common.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;

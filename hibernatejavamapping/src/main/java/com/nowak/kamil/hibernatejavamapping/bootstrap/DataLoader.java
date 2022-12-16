@@ -1,8 +1,8 @@
-package com.nowak.kamil.hibernatejavamapping;
+package com.nowak.kamil.hibernatejavamapping.bootstrap;
 
-import com.nowak.kamil.hibernatejavamapping.domain.Address;
-import com.nowak.kamil.hibernatejavamapping.domain.OrderHeader;
-import com.nowak.kamil.hibernatejavamapping.repository.OrderHeaderRepository;
+import com.nowak.kamil.hibernatejavamapping.order.domain.Address;
+import com.nowak.kamil.hibernatejavamapping.order.domain.OrderHeader;
+import com.nowak.kamil.hibernatejavamapping.order.repository.OrderHeaderRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
