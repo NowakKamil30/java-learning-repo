@@ -79,7 +79,7 @@ public class DataLoadTest {
 
     @Test
     void testDBLock() {
-        final var orderHeader = orderHeaderRepository.findById(21793L);
+        final var orderHeader = orderHeaderRepository.findById(1L);
 
         final var billTo = new Address();
         billTo.setAddress("Bill me");
@@ -151,11 +151,12 @@ public class DataLoadTest {
                     Customer c1 = new Customer();
                     c1.setCustomerName(customerName);
                     c1.setEmail("test@example.com");
-                    Address address = new Address();
-                    address.setAddress("123 Main");
-                    address.setCity("New Orleans");
-                    address.setState("LA");
-                    c1.setAddress(address);
+                    c1.setAddress(Address.builder()
+                            .address("bill")
+                            .city("bill")
+                            .state("bill")
+                            .zipCode("bill")
+                            .build());
                     return customerRepository.save(c1);
                 });
     }

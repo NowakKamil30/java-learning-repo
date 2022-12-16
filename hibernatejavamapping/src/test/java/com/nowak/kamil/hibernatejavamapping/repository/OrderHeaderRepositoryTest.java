@@ -44,7 +44,12 @@ class OrderHeaderRepositoryTest {
 
         customer = customerRepository.saveAndFlush(Customer.builder()
                 .customerName("name")
-                .address(new Address())
+                .address(Address.builder()
+                        .address("bill")
+                        .city("bill")
+                        .state("bill")
+                        .zipCode("bill")
+                        .build())
                 .build());
     }
 
@@ -167,6 +172,12 @@ class OrderHeaderRepositoryTest {
 
         final var orderHeader = new OrderHeader();
         final var Customer = new Customer();
+        customer.setAddress(Address.builder()
+                .address("bill")
+                .city("bill")
+                .state("bill")
+                .zipCode("bill")
+                .build());
         customer.setCustomerName("lalala");
         orderHeader.setCustomer(customerRepository.save(customer));
 

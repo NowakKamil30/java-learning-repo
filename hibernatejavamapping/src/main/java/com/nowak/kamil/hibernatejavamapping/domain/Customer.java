@@ -1,11 +1,14 @@
 package com.nowak.kamil.hibernatejavamapping.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.validator.constraints.Length;
 
 import java.util.Objects;
 import java.util.Set;
@@ -18,12 +21,20 @@ import java.util.Set;
 @ToString
 public class Customer extends BaseEntity {
     @Column(length = 50)
+    @Length(max = 50)
     private String customerName;
+
+    @Valid
     @Embedded
     private Address address;
+
     @Column(length = 20)
+    @Length(max = 20)
     private String phone;
+
+    @Email
     private String email;
+
     @OneToMany(mappedBy = "customer")
     @ToString.Exclude
     private Set<OrderHeader> orderHeaders;

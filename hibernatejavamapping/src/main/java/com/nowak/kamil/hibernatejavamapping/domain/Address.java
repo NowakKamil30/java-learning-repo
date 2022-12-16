@@ -1,6 +1,7 @@
 package com.nowak.kamil.hibernatejavamapping.domain;
 
 import jakarta.persistence.Embeddable;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.Objects;
@@ -13,9 +14,13 @@ import java.util.Objects;
 @AllArgsConstructor
 @ToString
 public class Address {
+    @Size(min = 2, max = 50)
     private String address;
+    @Size(min = 2, max = 50)
     private String city;
+    @Size(min = 2, max = 50)
     private String state;
+    @Size(min = 2, max = 50)
     private String zipCode;
 
     @Override
