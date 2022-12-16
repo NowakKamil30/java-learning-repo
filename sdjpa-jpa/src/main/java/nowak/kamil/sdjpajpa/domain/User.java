@@ -9,9 +9,14 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.URL;
 
 import java.sql.Timestamp;
+import java.util.Set;
 
 @Entity
-@Table(name = "wp_users")
+@Table(name = "wp_users", indexes = {
+        @Index(name = "user_login_key", columnList = "user_login"),
+        @Index(name = "user_nicename", columnList = "user_nicename"),
+        @Index(name = "user_email", columnList = "user_email")
+}) //indexes are greated during schema creation process
 @Getter
 @Setter
 public class User {
@@ -64,4 +69,8 @@ public class User {
     @Column(name = "display_name")
     @Basic(optional = false) // not null
     private String displayName;
+
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private Set<UserMeta> userMetaSet;
 }
