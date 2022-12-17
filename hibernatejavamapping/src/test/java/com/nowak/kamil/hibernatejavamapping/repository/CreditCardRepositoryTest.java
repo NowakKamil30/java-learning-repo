@@ -1,11 +1,13 @@
 package com.nowak.kamil.hibernatejavamapping.repository;
 
+import com.nowak.kamil.hibernatejavamapping.common.service.EncryptionService;
 import com.nowak.kamil.hibernatejavamapping.creditcard.domain.CreditCard;
 import com.nowak.kamil.hibernatejavamapping.creditcard.repository.CreditCardRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -20,6 +22,12 @@ class CreditCardRepositoryTest {
     @Autowired
     CreditCardRepository creditCardRepository;
 
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    EncryptionService encryptionService;
+
     @Test
     void shouldSaveCreditCard() {
         final var creditCard = new CreditCard();
@@ -28,6 +36,14 @@ class CreditCardRepositoryTest {
         creditCard.setExpirationDate("12/2030");
         final var savedCreditCard = creditCardRepository.save(creditCard);
 
+        final var dbRow = jdbcTemplate.queryForMap("""
+            SELECT * FROM credit_card
+                WHERE id = """ + savedCreditCard.getId());
+
+        final var cardValue = (String) dbRow.get("credit_card_number");
+
+        assertThat(savedCreditCard.getCreditCardNumber()).isNotEqualTo(cardValue);
+        assertThat(cardValue).isEqualTo(encryptionService.encrypt(CREDIT_CARD));
         assertThat(savedCreditCard.getCreditCardNumber()).isEqualTo(CREDIT_CARD);
         assertThat(savedCreditCard.getVersion()).isEqualTo(0);
     }
