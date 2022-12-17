@@ -34,7 +34,8 @@ class CreditCardRepositoryTest {
         creditCard.setCreditCardNumber(CREDIT_CARD);
         creditCard.setCvv("123");
         creditCard.setExpirationDate("12/2030");
-        final var savedCreditCard = creditCardRepository.save(creditCard);
+        final var savedCreditCard = creditCardRepository.saveAndFlush(creditCard);
+
 
         final var dbRow = jdbcTemplate.queryForMap("""
             SELECT * FROM credit_card
@@ -42,9 +43,9 @@ class CreditCardRepositoryTest {
 
         final var cardValue = (String) dbRow.get("credit_card_number");
 
-        assertThat(savedCreditCard.getCreditCardNumber()).isNotEqualTo(cardValue);
+        assertThat(savedCreditCard.getCreditCardNumber()).isEqualTo(cardValue);
         assertThat(cardValue).isEqualTo(encryptionService.encrypt(CREDIT_CARD));
-        assertThat(savedCreditCard.getCreditCardNumber()).isEqualTo(CREDIT_CARD);
+        assertThat(savedCreditCard.getCreditCardNumber()).isEqualTo(encryptionService.encrypt(CREDIT_CARD));
         assertThat(savedCreditCard.getVersion()).isEqualTo(0);
     }
 }
