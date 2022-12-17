@@ -2,10 +2,7 @@ package com.nowak.kamil.hibernatejavamapping.creditcard.domain;
 
 import com.nowak.kamil.hibernatejavamapping.common.domain.BaseEntity;
 import com.nowak.kamil.hibernatejavamapping.common.interceptor.EncryptedString;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.Version;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +14,8 @@ import lombok.extern.slf4j.Slf4j;
 @EntityListeners(CreditCardJPACallback.class)
 public class CreditCard extends BaseEntity {
 
-    @EncryptedString
+    //@EncryptedString
+    @Convert(converter = CreditCartConverter.class)
     private String creditCardNumber;
 
     private String cvv;

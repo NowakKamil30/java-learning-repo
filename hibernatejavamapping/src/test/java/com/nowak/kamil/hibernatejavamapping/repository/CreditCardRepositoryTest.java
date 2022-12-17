@@ -43,9 +43,8 @@ class CreditCardRepositoryTest {
 
         final var cardValue = (String) dbRow.get("credit_card_number");
 
-        assertThat(savedCreditCard.getCreditCardNumber()).isEqualTo(cardValue);
+        assertThat(savedCreditCard.getCreditCardNumber()).isNotEqualTo(cardValue);
         assertThat(cardValue).isEqualTo(encryptionService.encrypt(CREDIT_CARD));
-        assertThat(savedCreditCard.getCreditCardNumber()).isEqualTo(encryptionService.encrypt(CREDIT_CARD));
         assertThat(savedCreditCard.getVersion()).isEqualTo(0);
     }
 }
