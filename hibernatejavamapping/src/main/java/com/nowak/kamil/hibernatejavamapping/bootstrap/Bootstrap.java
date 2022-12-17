@@ -1,5 +1,6 @@
 package com.nowak.kamil.hibernatejavamapping.bootstrap;
 
+import com.nowak.kamil.hibernatejavamapping.common.config.SpringContextHelper;
 import com.nowak.kamil.hibernatejavamapping.order.domain.Category;
 import com.nowak.kamil.hibernatejavamapping.order.domain.OrderLine;
 import com.nowak.kamil.hibernatejavamapping.order.domain.Product;
@@ -23,13 +24,13 @@ public class Bootstrap implements CommandLineRunner {
     // We should call readOrderData using proxy(easier way of doing it is replaced readOrderData to anew component)
 
     @Override
-    @Transactional(readOnly = true)
     public void run(String... args) throws Exception {
         log.info("Run Bootstrap");
-        readOrderData();
+        SpringContextHelper.getApplicationContext().getBean(Bootstrap.class).readOrderData(); // for this round around we can use readOrderData in transaction
     }
 
-    private void readOrderData() {
+    @Transactional(readOnly = true)
+    public void readOrderData() {
         orderHeaderRepository.findById(1L).ifPresentOrElse(orderHeader -> {
             orderHeader.getOrderLines().stream()
                     .map(OrderLine::getProduct)
